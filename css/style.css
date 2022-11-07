@@ -1,0 +1,8 @@
+form{
+    background: rgb(248, 248, 101);
+    border: solid;
+    width: 50%;
+}
+input:invalid {
+    border: 2px dashed red;
+  }
