@@ -1,7 +1,18 @@
-const regexp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+//window.onload = funcion();
+/*var numeroTarjeta=document.getElementById("numeroTarjeta");
+var direccion=document.getElementById("direccion");
+direccion.onclick = activarTarjeta();
+function activarTarjeta(){
+    numeroTarjeta.removeAttribute("disabled");
+}*/
+
+
+const regexp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
+const regexp2=/^$/;
 const regexpCorreo=/^[\w]+@[\w]+.[\w]+$/;
 const regexpCorreo2=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const regexpNombre=/^[\w]+[\s]?[\w]+$/;
+const regexpTarjeta=/^\d{8,19}$/;
 
 //var password= document.getElementById("contra").value;
 //console.log(password);
@@ -53,4 +64,17 @@ function validarLogin(e) {
         alert("Se ha logueado correctamente");
     }
 }
+
+function activarTarjeta() {
+    var direccion= document.getElementById("direccion").value;
+    var pais= document.getElementById("pais").value;
+    //console.log("aaa "+ pais);
+    if (direccion.length >= 1  && pais.length >=1) {
+      document.getElementById('numeroTarjeta').disabled = false;
+    } else {
+      document.getElementById('numeroTarjeta').disabled = true;
+    }
+}
+document.getElementById('direccion').addEventListener('keyup', activarTarjeta);
+document.getElementById('pais').addEventListener('click', activarTarjeta);
 
