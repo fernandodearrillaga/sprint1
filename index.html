@@ -11,6 +11,7 @@
 <body>
     <form id="registro" onsubmit="return validar(event)">
         <h1>REGISTRO</h1>
+        <p>Los campos marcados con asterisco (*) son obligatorios</p>
         <label for="nombre">Nombre *</label>
         <input type="text" id="nombre" name="nombre" required><br>
         <label for="apellidos">Apellidos *</label>
@@ -43,7 +44,7 @@
         <label for="numeroTarjeta">Número de tarjeta de crédito</label>
         <input type="number" id="numeroTarjeta" name="numeroTarjeta" disabled><br>
         <input type="checkbox" id="notificaciones" name="notificaciones" value="notificaciones">
-        <label for="notificaciones">Activar notificaciones de la pagina</label><br>
+        <label for="notificaciones">Activar notificaciones de la página</label><br>
         <input type="checkbox" id="revistaDigital" name="revistaDigital" value="revistaDigital">
         <label for="revistaDigital">Recepción de la revista digital</label><br>
         <input type="submit" id="submit">
